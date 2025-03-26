@@ -29,10 +29,10 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-# Подключение к Google Sheets
+# Подключение к Google Sheets (через credentials.prod.json)
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.prod.json", scope)
 client = gspread.authorize(creds)
 sheet = client.open(SPREADSHEET_NAME).worksheet("Все заявки")
 
