@@ -51,7 +51,7 @@ def get_category_keyboard():
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    await message.answer("Добро пожаловать на теннисный турнир ДРУГ 2025!
+    await message.answer("Добро пожаловать на теннисный турнир ДРУГ 2025!\nВыберите категорию участия:")
 
 Выберите категорию участия:", reply_markup=get_category_keyboard())
     user_data[message.chat.id] = {}
